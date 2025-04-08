@@ -30,3 +30,29 @@ public class WebAppInitializer extends AbstractAnnotationConfigDispatcherServlet
 
     }
 }
+/*
+    1-Java ile Web uygulamaları geliştirirken gelen isteklerin ele alınıp
+        uygun cevapların hazırlanması için Servlet classlar geliştirilir.
+        SpringMVC ile bizim servlet class geliştirmemize gerek yoktur, SpringMVC
+        yazdığımız kodları özel bir servlet class olan Dispatcher Servlet'a dönüştürür.
+
+        2-Dispatcher Servlet aynı zamanda Front Controller(ön kontrolcü) görevi görür.
+        Gelen istekleri merkezi olarak karşılar ilgili controllera yönlendirir. (Örneğin
+        Student ile ilgili istekleri StudentController, Course ile ilgili istekleri
+        CourseController'a yönlendirir). Bir "SEVK MEMURU" gibi çalışır.
+
+        3-Handler Mapping : DispactherServlet ile karşılanan isteklerin uygun controllera yönlendirilmesini
+        sağlar
+
+        4-ModelAndView : Controllera gelen istek işlenir, model gerekirse manipule edilir ve
+        cevap olarak model ile birlikte görüntülenecek sayfanın ismi ModelAndView objesinde birlikte
+        gönderilir. Controllera gelen istek cevaplanırken ModelAndView veya String(sadece görüntülenecek
+        sayfanın ismi veya yeniden yönlendirme) döndürülebilir.
+
+        5-ViewResolver : Controllerdan gelen ModelAndView içindeki sayfa view katmanında bulunur, cevap olan
+         model sayfanın içine yerleştirilir(bind edilir)
+
+        6-View Katmanı : Görüntülenecek sayfalar bu katmanda yer alır, Dinamik veya statik sayfalar olabilir.
+
+
+*/
