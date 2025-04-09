@@ -42,4 +42,12 @@ public class StudentService {
     }
 
 
+    //4-b
+    public void deleteStudent(Long id) {
+        //idsi verilen öğrenciyi bulalım
+        Student student=findStudentById(id);
+        repository.delete(student);
+    }
+
+
 }

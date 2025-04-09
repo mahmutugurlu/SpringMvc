@@ -41,10 +41,7 @@ public class StudentRepository implements IRepository<Student,Long> {
         session.close();
     }
 
-    @Override
-    public void delete(Student entity) {
 
-    }
 
     //3-c
     @Override
@@ -56,5 +53,15 @@ public class StudentRepository implements IRepository<Student,Long> {
         Optional<Student> optional=Optional.ofNullable(student);//Attention!!!
         session.close();
         return optional;
+    }
+
+    //4-c
+    @Override
+    public void delete(Student entity) {
+        session=sessionFactory.openSession();
+        Transaction tx =session.beginTransaction();
+        session.delete(entity);
+        tx.commit();
+        session.close();
     }
 }
